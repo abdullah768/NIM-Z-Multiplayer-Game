@@ -1,0 +1,35 @@
+		body{
+			font-family: "Righteous", cursive;
+		}
+		.out{
+			width: 75px;
+			/*height: 400px;*/
+			background-color: #EFEFEF;
+			display: inline-block;
+		}
+		.in{
+			margin: 2px;
+			width:69px ;
+			height:30px;
+			background-color: #00303F;
+		}
+		.dn{
+			background-color: #EFEFEF !important;
+		}
+		#logo{
+			text-align: center;
+			color:#B56357;
+			font-size: 40px;
+			margin: 10px;
+		}
+		#game{
+			border:3px solid #00303F;
+			background-color: #EFEFEF;
+			padding:10px ;
+		}
+		#turn{
+			text-align: center;
+			color:#B56357;
+			font-size: 20px;
+
+		}

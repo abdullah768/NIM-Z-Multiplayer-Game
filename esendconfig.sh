@@ -1,0 +1,1 @@
+scp config.txt complab@192.168.8.107:/var/www/html/NIM-Z

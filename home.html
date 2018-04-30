@@ -1,0 +1,227 @@
+﻿<!doctype html>
+
+	<head>
+
+		<title>Nim-Z</title>
+
+		<meta charset="utf-8">
+		  
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="bootstrap3cs.css">
+
+		<script src="jquery.js"></script>
+		  
+		<script src="bootstrap3js.js"></script>
+
+		<link href="font.css" rel="stylesheet">
+		 
+		<link rel="stylesheet" type="text/css" href="mstyle.css">
+
+	</head>
+
+	<body>
+
+	    <div class="name">
+	  
+	    	<h1>NIM-Z</h1>
+
+		</div>
+
+	    <div class="btns">
+
+	    <!-- Trigger the modal with a button -->
+	    	<button type="button" class="btn btn-info btn-lg startGame" data-toggle="modal" data-target="#stp">SETUP</button>
+	  
+		    <button type="button" class="btn btn-info btn-lg startGame" data-toggle="modal" data-target="#str">START</button>
+
+		    <button type="button" class="btn btn-info btn-lg startGame" data-toggle="modal" data-target="#tut">TUTORIAL</button>
+
+		    <!--Setup Modal-->
+
+		    <div class="modal fade" id="stp" role="dialog">
+		    
+		    	<div class="modal-dialog">
+
+		      	<!-- Modal content-->
+		  
+		     		<div class="modal-content">
+		   
+		    			<div class="modal-header">
+		          
+		     				<button type="button" class="close" data-dismiss="modal">×</button>
+		         
+		    				<h4 class="modal-title" text-align="center">SETUP</h4>
+	        
+	   					</div>
+	        
+						<div class="modal-body">
+
+							<p>
+								Please make sure that the following are installed correctly:
+						          
+							    <ul>
+
+							     <li>PHP</li>
+
+							     <li>Myapache2 installed and running</li>
+
+							     <li>SSH</li>
+
+							     <li>Expect</li>
+
+								</ul>
+
+								Also, make sure that the NIM-Z folder is in /var/www/html folder and php has permissions to read and write into the files of the folder.
+
+							</p>
+
+						  </div>
+	       
+	   					<div class="modal-footer">
+	         
+				 	    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        
+					    </div>
+	      
+					</div>
+
+				</div>
+	  
+			</div>
+
+		    <!--Start Modal-->
+
+		    <div class="modal fade" id="str" role="dialog">
+		    
+		    	<div class="modal-dialog">
+
+		      	<!-- Modal content-->
+		  
+		     		<div class="modal-content">
+		   
+		    			<div class="modal-header">
+		          
+		     				<button type="button" class="close" data-dismiss="modal">×</button>
+		         
+		    				<h4 class="modal-title" text-align="center">START GAME</h4>
+	        
+	   					</div>
+	        
+						<div class="modal-body">
+						          
+						    <form name="setting" method="post" action="start.php">
+
+						    	<div class="form-group">
+
+								    <label for="numpile">You'd like to play as: </label>
+								          <select name="player" id="inputState" class="form-control" aria-describedby="plhelp">
+									        <option selected>Player 1</option>
+									        <option>Player 2</option>
+									      </select>
+								    <small id="plhelp" class="form-text text-muted">Both Players need to select distinct options. Player 1 chooses the number of piles.</small>
+
+							  	</div>
+
+								<div class="form-group">
+
+								    <label for="numpile">Number of piles:</label>
+								    <input name="numpile" type="number" class="form-control" id="numpile" aria-describedby="numhelp" value=0 required>
+								    <small id="numhelp" class="form-text text-muted">Value should be Min 3 and Max 16. Enter 0 for Random value.</small>
+
+							  	</div>
+
+								<div class="form-group">
+
+								    <label for="ip">Partner's IP:</label>
+								    <input name="ip" type="text" class="form-control" id="ip" value="192.168.8.107" required>
+
+							  	</div>
+
+								<div class="form-group">
+
+								    <label for="usr">Partner's Computer Username:</label>
+								    <input name="usr" type="text" class="form-control" id="usr" value="complab" required>
+
+							  	</div>
+
+								<div class="form-group">
+
+								    <label for="pass">Partner's Computer Password:</label>
+								    <input name="pass" type="password" class="form-control" id="pass" aria-describedby="passhelp" value="l@b@123" required>
+								    <small id="passhelp" class="form-text text-muted">Required for SCP purpose.</small>
+
+							  	</div>
+							  	<button type="submit" class="btn btn-primary">PLAY!</button>
+
+							</form>
+
+						</div>
+	       
+	   					<div class="modal-footer">
+	         
+				 	    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        
+					    </div>
+	      
+					</div>
+
+				</div>
+	  
+			</div>
+
+		      <!--Tutorial Modal -->
+
+		    <div class="modal fade" id="tut" role="dialog">
+		    
+		    	<div class="modal-dialog">
+
+		      	<!-- Modal content-->
+		  
+		     		<div class="modal-content">
+		   
+		    			<div class="modal-header">
+		          
+		     				<button type="button" class="close" data-dismiss="modal">×</button>
+		         
+		    				<h4 class="modal-title" text-align="center">TUTORIAL</h4>
+	        
+	   					</div>
+	        
+						<div class="modal-body">
+						          
+						    <ul>
+
+						     <li>NIMZ is a mathematical game of strategy in game theory where two players take turns removing objects from distinct heaps (Row #1...Row #4).</li>
+
+						     <li>On each turn, a player must remove at least one object, and may remove any number of objects provided they all come from the same heap - in this case a heap is a row.</li>
+
+						     <li>The player to make the last move is the <i>Winner</i>.</li>
+
+						     <li>The player who cannot make any valid move is the <i>Loser</i>.</li>
+
+						     <li>Clicking on a block implies that the user wishes to remove all the blocks above it in the row.</li>
+
+						     <li>Make sure that Player 2 selects 'play' after atleast 10 seconds of Player 1 selecting 'play'.</li>
+
+							</ul>
+
+						  </div>
+	       
+	   					<div class="modal-footer">
+	         
+				 	    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        
+					    </div>
+	      
+					</div>
+
+				</div>
+	  
+			</div>
+	 
+	 	</div>
+
+	</body>
+
+</html>

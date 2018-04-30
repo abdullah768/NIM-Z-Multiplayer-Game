@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="cache-control" content="no-cache" />
+		<title>NIM-Z GAME</title>
+
+		<script src="jquery.js?ran=<?php echo uniqid(); ?>"></script>
+		<script src="engine.js?ran=<?php echo uniqid(); ?>"></script>
+		<link href="font.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="style.css">
+
+		<script>
+
+			setInterval(status,500);
+			bg="rgb(239, 239, 239)";
+			st=readf("setting.txt");
+			player=st[0];
+			np=parseInt(st[1]);
+			lt=15;
+			var ht=[];
+			//console.log(player,np);
+			$(document).ready(function(){
+				init();		
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<p id="logo"> NIM-Z -> Player <br></p>
+		<div id="game" onclick="makemove(event)"> <p id="turn"> PLAYER <span id="toMove">1</span> TO MOVE</p> </div>
+
+	</body>
+</html>
